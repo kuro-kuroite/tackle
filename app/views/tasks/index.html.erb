@@ -1,0 +1,25 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-6 offset-md-3">
+      <h1>All Tasks</h1>
+      <% @tasks.each do |task| %>
+        <div class="container">
+          <div class="row">
+            <h1><%= task.name %></h1>
+            <ul class="list-inline">
+              <li class="list-inline-item btn btn-link">
+                <%= link_to 'Show', task %>
+              </li>
+              <li class="list-inline-item btn btn-link">
+                <%= link_to 'Edit', edit_task_path(task) %>
+              </li>
+              <li class="list-inline-item btn btn-link">
+                <%= link_to 'Destroy', task, method: :delete, data: { confirm: "Are you sure?" } %>
+              </li>
+            </ul>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
