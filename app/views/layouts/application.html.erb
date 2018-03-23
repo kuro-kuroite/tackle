@@ -9,6 +9,23 @@
   </head>
 
   <body>
+    <header class="navbar-header">
+      <nav class="navbar navbar-expand-sm navbar-light bg-light">
+        <a href="/" class="navbar-brand">Tackle</a>
+        <ul class="nav navbar-nav ml-auto">
+          <%# TODO: ログイン時とログアウト時でナビを振り分ける  %>
+          <li class="nav-item"><%= link_to 'New Task', new_task_path, class: "nav-link" %></li>
+          <!-- <li class="nav-item"><%# link_to 'Profile', session_path(current_user), class: "nav-link disabled" %></li> -->
+          <li class="nav-item"><%= link_to 'Profile', '#', class: "nav-link disabled" %></li>
+          <!-- <li class="nav-item"><%# link_to 'Logout', destroy_user_session, class: "nav-link disabled" %></li> -->
+          <li class="nav-item"><%= link_to 'Logout', '#', class: "nav-link disabled" %></li>
+          <!-- <li class="nav-item"><%# link_to 'Sign up', new_user_registration, class: "nav-link disabled" %></li>
+          <li class="nav-item"><%# link_to 'Log in', new_user_session, class: "nav-link disabled" %></li> -->
+        </ul>
+      </nav>
+    </header>
+
     <%= yield %>
+
   </body>
 </html>

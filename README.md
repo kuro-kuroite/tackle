@@ -18,3 +18,4 @@
   - top page の追加
   - ユーザ登録
   - task#index にformの追加
+  - font awesome
