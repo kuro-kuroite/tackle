@@ -1,11 +1,18 @@
-<ul class="list-group">
-  <li class="list-group-item">
-    <h1>Name</h1>
-    <%= task.name %>
-  </li>
-
-  <li class="list-group-item">
-    <h1>Deadline</h1>
-    <%= task.deadline %>
-  </li>
-</ul>
+<div class="card my-5">
+  <div class="card-header">
+    <h1><%= link_to task.name, task %></h1>
+  </div>
+  <div class="card-body">
+    <div class="card-text">
+      <%= task.deadline %>
+      <ul class="list-inline">
+        <li class="list-inline-item btn btn-link">
+          <%= link_to 'Edit', edit_task_path(task) %>
+        </li>
+        <li class="list-inline-item btn btn-link">
+          <%= link_to 'Destroy', task, method: :delete, data: { confirm: "Are you sure?" } %>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
