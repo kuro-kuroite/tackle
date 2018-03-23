@@ -18,6 +18,7 @@ class TasksController < ApplicationController
 
   def index
     @tasks = Task.all
+    # @comment = Comment.find_by(task_id: params[:id]) # TODO: index で最新のコメントのみを表示したい
   end
 
   def new
@@ -25,6 +26,8 @@ class TasksController < ApplicationController
   end
 
   def show
+    @comment = Comment.new
+    @comments = Comment.where(task_id: params[:id])
   end
 
   def update

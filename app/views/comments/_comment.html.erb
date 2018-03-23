@@ -1,18 +1,17 @@
 <div class="container">
   <div class="row">
     <div class="col-md-6 offset-md-3">
-      <h1>Show Task</h1>
-      <%= render @task %>
       <ul class="list-inline">
+        <div>
+          <%= comment.content %>
+        </div>
         <li class="list-inline-item btn btn-link">
-          <%= link_to 'Edit', edit_task_path(@task) %>
+          <%= link_to 'Edit', edit_comment_path(comment) %>
         </li>
         <li class="list-inline-item btn btn-link">
-          <%= link_to 'Back', tasks_path %>
+          <%= link_to 'Destroy', comment, method: :delete, data: { confirm: "Are you sure?" } %>
         </li>
       </ul>
     </div>
   </div>
-  <%= render @comments %>
-  <%= render 'comments/form', task: @task, comment: @comment %>
 </div>
