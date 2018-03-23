@@ -19,3 +19,4 @@
   - ユーザ登録
   - task#index にformの追加
   - font awesome
+  - task を card で表現
