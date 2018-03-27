@@ -16,6 +16,13 @@
     <p>
       <%= distance_of_time_in_words(remaining_time) %>
     </p>
+    <% if defined? comment %>
+      <% unless comment.nil?  %>
+        <p>
+          <%= truncate(comment.content, omission: '・・・', length: 20) %>
+        </p>
+      <% end %>
+    <% end %>
   </div>
   <div class="col-12 col-sm-2">
     <ul class="list-inline">

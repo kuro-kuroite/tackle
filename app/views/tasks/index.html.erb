@@ -1,7 +1,9 @@
 <div class="row">
   <div class="col">
     <h1>All Tasks</h1>
-    <%= render @tasks %>
+    <% @tasks.each do |task| %>
+      <%= render task, task: task, comment: task.comments.last %>
+    <% end %>
     <%= render 'form', task: @task %>
   </div>
 </div>
