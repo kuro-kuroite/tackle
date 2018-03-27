@@ -20,3 +20,4 @@
   - task#index にformの追加
   - font awesome
   - task を card で表現
+  - comment の1, 2, ..と連番にするか、専用の画像を入れる
