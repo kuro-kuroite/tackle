@@ -1,10 +1,12 @@
 <div class="container">
   <div class="row">
-    <div class="">
+    <div class="col-11">
+      <ol class="timeline">
+        <li><%= comment.content %></li>
+      </ol>
+    </div>
+    <div class="col-1">
       <ul class="list-inline">
-        <div>
-          <%= comment.content %>
-        </div>
         <li class="list-inline-item btn btn-link">
           <%= link_to 'Edit', edit_comment_path(comment) %>
         </li>
