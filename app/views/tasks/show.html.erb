@@ -1,10 +1,9 @@
-<div class="container">
-  <div class="row">
-    <div class="">
-      <h1>Show Task</h1>
-      <%= render @task %>
-    </div>
+<div class="row">
+  <div class="col-md-10 offset-md-1">
+    <h1>Show Task</h1>
+    <%= render @task %>
+
+    <%= render @comments %>
+    <%= render 'comments/form', task: @task, comment: @comment %>
   </div>
-  <%= render @comments %>
-  <%= render 'comments/form', task: @task, comment: @comment %>
 </div>

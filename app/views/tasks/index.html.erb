@@ -1,14 +1,6 @@
-<div class="container">
-  <div class="row">
-    <div class="">
-      <h1>All Tasks</h1>
-      <% @tasks.each do |task| %>
-        <div class="container">
-          <div class="row">
-            <%= render task %>
-          </div>
-        </div>
-      <% end %>
-    </div>
+<div class="row">
+  <div class="col">
+    <h1>All Tasks</h1>
+    <%= render @tasks %>
   </div>
 </div>

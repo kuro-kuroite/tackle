@@ -1,30 +1,30 @@
-<div class="container">
-  <div class="row row-striped">
-    <div class="col-2 text-right">
-      <h1 class="display-4"><span class="badge badge-secondary"><%= task.deadline.day %></span></h1>
-      <h2><%= task.deadline.strftime("%b.") %></h2>
-    </div>
-    <div class="col-9">
-      <h3 class="text-uppercase"><strong><%= link_to task.name, task, class: "text-muted" %></strong></h3>
-      <ul class="list-inline">
-        <li class="list-inline-item"><i class="fa fa-calendar-o" aria-hidden="true"></i><%= task.deadline.strftime("%m/%d(#{%w(日 月 火 水 木 金 土)[task.deadline.wday]})") %></li>
-        <li class="list-inline-item"><i class="fa fa-clock-o" aria-hidden="true"></i><%= task.deadline.strftime("%H:%M:%S") %></li>
-        <!-- <li class="list-inline-item"><i class="fa fa-location-arrow" aria-hidden="true"></i> Cafe</li> -->
-      </ul>
-      <% remaining_time = task.deadline - Time.now %>
-      <p>
-        <%= distance_of_time_in_words(remaining_time) %>
-      </p>
-    </div>
-    <div class="col-1">
-      <ul class="list-inline">
-        <li class="list-inline-item btn btn-link">
-          <%= link_to 'Edit', edit_task_path(task) %>
-        </li>
-        <li class="list-inline-item btn btn-link">
-          <%= link_to 'Destroy', task, method: :delete, data: { confirm: "Are you sure?" } %>
-        </li>
-      </ul>
-    </div>
+<div class="row row-striped my-5">
+  <div class="col-3 col-sm-2">
+    <h1 class="display-4 mx-auto text-right">
+      <span class="badge badge-secondary mw-100 text-center"><%= task.deadline.day %></span>
+    </h1>
+    <h2 class="text-right"><%= task.deadline.strftime("%b.") %></h2>
+  </div>
+  <div class="col-9 col-sm-8">
+    <h3 class="text-uppercase"><strong><%= link_to task.name, task, class: "text-muted" %></strong></h3>
+    <ul class="list-inline">
+      <li class="list-inline-item"><i class="fa fa-calendar-o" aria-hidden="true"></i><%= task.deadline.strftime("%m/%d(#{%w(日 月 火 水 木 金 土)[task.deadline.wday]})") %></li>
+      <li class="list-inline-item"><i class="fa fa-clock-o" aria-hidden="true"></i><%= task.deadline.strftime("%H:%M:%S") %></li>
+      <!-- <li class="list-inline-item"><i class="fa fa-location-arrow" aria-hidden="true"></i> Cafe</li> -->
+    </ul>
+    <% remaining_time = task.deadline - Time.now %>
+    <p>
+      <%= distance_of_time_in_words(remaining_time) %>
+    </p>
+  </div>
+  <div class="col-12 col-sm-2">
+    <ul class="list-inline">
+      <li class="list-inline-item btn btn-link">
+        <%= link_to 'Edit', edit_task_path(task) %>
+      </li>
+      <li class="list-inline-item btn btn-link">
+        <%= link_to 'Destroy', task, method: :delete, data: { confirm: "Are you sure?" } %>
+      </li>
+    </ul>
   </div>
 </div>

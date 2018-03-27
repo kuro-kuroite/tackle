@@ -1,19 +1,17 @@
-<div class="container">
-  <div class="row">
-    <div class="col-11">
-      <ol class="timeline">
-        <li><%= comment.content %></li>
-      </ol>
-    </div>
-    <div class="col-1">
-      <ul class="list-inline">
-        <li class="list-inline-item btn btn-link">
-          <%= link_to 'Edit', edit_comment_path(comment) %>
-        </li>
-        <li class="list-inline-item btn btn-link">
-          <%= link_to 'Destroy', comment, method: :delete, data: { confirm: "Are you sure?" } %>
-        </li>
-      </ul>
-    </div>
+<div class="row my-3">
+  <div class="col-9 col-sm-9 offset-sm-1">
+    <ol class="timeline">
+      <li><%= comment.content %></li>
+    </ol>
+  </div>
+  <div class="col-12 col-sm-2">
+    <ul class="list-inline">
+      <li class="list-inline-item btn btn-link">
+        <%= link_to 'Edit', edit_comment_path(comment) %>
+      </li>
+      <li class="list-inline-item btn btn-link">
+        <%= link_to 'Destroy', comment, method: :delete, data: { confirm: "Are you sure?" } %>
+      </li>
+    </ul>
   </div>
 </div>
