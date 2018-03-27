@@ -1,14 +1,14 @@
 <div class="row mt-5">
   <div class="col offset-sm-1">
     <%= form_with(model: [task, comment], local: true) do |f| %>
-    <div class="form-group">
-      <%= f.label :content %>
-      <%= f.text_field :content, class: "form-control" %>
-    </div>
+      <div class="form-group">
+        <%= f.label :content %>
+        <%= f.text_field :content, class: "form-control" %>
+      </div>
 
-    <div class="actions">
-      <%= f.submit class: "btn btn-primary" %>
-    </div>
+      <div class="actions">
+        <%= f.submit class: "btn btn-primary" %>
+      </div>
     <% end %>
   </div>
 </div>
