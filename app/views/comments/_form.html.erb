@@ -1,6 +1,8 @@
 <div class="row mt-5">
   <div class="col offset-sm-1">
     <%= form_with(model: [task, comment], local: true) do |f| %>
+      <%= render 'shared/error_messages', object: f.object %>
+
       <div class="form-group">
         <%= f.label :content %>
         <%= f.text_field :content, class: "form-control" %>
