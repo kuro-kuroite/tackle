@@ -26,3 +26,4 @@
   - ~edit destroyのボタンをBootstrap
   - datetimeをlocalの時間に対応できるように
   - datetimeのデザインをよくする
+  - Tackle iconを作る
