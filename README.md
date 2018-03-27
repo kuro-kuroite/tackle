@@ -24,3 +24,5 @@
   - カウントダウンの表示を工夫する
   - tasks#indexに最新のコメントのみを注釈で入れる
   - edit destroyのボタンをBootstrap
+  - datetimeをlocalの時間に対応できるように
+  - datetimeのデザインをよくする
