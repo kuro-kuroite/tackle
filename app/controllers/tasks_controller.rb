@@ -4,8 +4,11 @@ class TasksController < ApplicationController
   # TODO: CRUD の開発手順を考察、C、V
   def create
     @task = Task.new(task_params)
-    @task.save
-    redirect_to @task
+    if @task.save
+      redirect_to @task
+    else
+      render 'new'
+    end
   end
 
   def destroy

@@ -4,8 +4,14 @@ class CommentsController < ApplicationController
   def create
     @comment = Comment.new(comment_params)
     @comment.task_id = params[:task_id] # TODO: 正式な書き方を模索
-    @comment.save
-    redirect_to @comment.task # TODO: 正式な書き方を模索
+    if @comment.save
+      redirect_to @comment.task # TODO: 正式な書き方を模索
+    else
+      # FIXME: 適当な実装方法が見当たらなかった
+      @comments = Comment.where(task_id: params[:task_id])
+      @task = @comments.first.task
+      render :template => "tasks/show" # FIXME: renderの別の呼び方を模索
+    end
   end
 
   def destroy
