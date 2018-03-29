@@ -14,6 +14,7 @@
         <a href="/" class="navbar-brand">Tackle</a>
         <ul class="nav navbar-nav ml-auto">
           <%# TODO: ログイン時とログアウト時でナビを振り分ける  %>
+          <li class="nav-item"><%= link_to 'Tasks', tasks_path, class: "nav-link" %></li>
           <li class="nav-item"><%= link_to 'New Task', new_task_path, class: "nav-link" %></li>
           <!-- <li class="nav-item"><%# link_to 'Profile', session_path(current_user), class: "nav-link disabled" %></li> -->
           <li class="nav-item"><%= link_to 'Profile', '#', class: "nav-link disabled" %></li>
