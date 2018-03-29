@@ -24,6 +24,7 @@
   - ~task を card で表現
   - comment の1, 2, ..と連番にするか、専用の画像を入れる
   - カウントダウンの表示を工夫する
+    - Ajaxの知識が必要らしい
   - ~tasks#indexに最新のコメントのみを注釈で入れる
   - ~edit destroyのボタンをBootstrap
   - datetimeをlocalの時間に対応できるように
