@@ -1,0 +1,5 @@
+header::after {
+  content: "";
+  display: block;
+  margin-top: 3rem; // FIXME: headerの高さを動的に取れるようにしたい
+}
