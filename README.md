@@ -29,3 +29,4 @@
   - Tackle iconを作る
   - date picker
   - seed dataの追加
+  - 日程を簡単にずらせるようにする
