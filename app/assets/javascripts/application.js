@@ -13,6 +13,8 @@
 //= require jquery3
 //= require popper
 //= require bootstrap-sprockets
+//= require flatpickr
+//= require flatpickr/l10n/ja
 //= require rails-ujs
 //= require turbolinks
 //= require_tree .

@@ -10,8 +10,20 @@
 
       <div class="form-group">
         <%= f.label :deadline %>
-        <%= f.datetime_local_field :deadline, class: "form-control bootstrap-date" %> <%# FIXME: bootstrap 4 で正しく適用されない %>
+        <%= f.text_field :deadline, class: "form-control flatpickr" %>
       </div>
+      <%# FIXME: tasks.coffee で設定してもうまく反映できない  %>
+      <script>
+        const config = {
+          defaultDate: "today",
+          enableTime: true,
+          minDate: "today",
+          locale: "ja",
+          time_24hr: true,
+        };
+
+        flatpickr('.flatpickr', config);
+      </script>
 
       <div class="form-group">
         <%= f.submit class: "btn btn-primary" %>

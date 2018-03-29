@@ -28,9 +28,9 @@
   - ~tasks#indexに最新のコメントのみを注釈で入れる
   - ~edit destroyのボタンをBootstrap
   - datetimeをlocalの時間に対応できるように
-  - datetimeのデザインをよくする
+  - ~datetimeのデザインをよくする
   - Tackle iconを作る
-  - date picker
+  - ~date picker
   - seed dataの追加
     - after DD days と計算できていない
   - 日程を簡単にずらせるようにする
