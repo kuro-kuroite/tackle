@@ -32,4 +32,5 @@
   - Tackle iconを作る
   - date picker
   - seed dataの追加
+    - after DD days と計算できていない
   - 日程を簡単にずらせるようにする
