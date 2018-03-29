@@ -8,7 +8,7 @@ class CommentsController < ApplicationController
       redirect_to @comment.task # TODO: 正式な書き方を模索
     else
       # FIXME: 適当な実装方法が見当たらなかった
-      @comments = Comment.where(task_id: params[:task_id])
+      @comments = Comment.where(task_id: params[:task_id]).order(:created_at).page(params[:page])
       @task = @comments.first.task
       render :template => "tasks/show" # FIXME: renderの別の呼び方を模索
     end
@@ -21,7 +21,7 @@ class CommentsController < ApplicationController
 
   # TODO: edit の実装
   def edit
-    @comments = Comment.where(task_id: params[:id])
+    @comments = Comment.where(task_id: params[:id]).order(:created_at).page(params[:page])
     @task = @comment.task
   end
 

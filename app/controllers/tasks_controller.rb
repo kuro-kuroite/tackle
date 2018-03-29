@@ -20,7 +20,7 @@ class TasksController < ApplicationController
   end
 
   def index
-    @tasks = Task.all
+    @tasks = Task.order(deadline: :asc).page(params[:page]).per(1)
     @task = Task.new
   end
 
@@ -30,7 +30,7 @@ class TasksController < ApplicationController
 
   def show
     @comment = Comment.new
-    @comments = Comment.where(task_id: params[:id])
+    @comments = Comment.where(task_id: params[:id]).order(:created_at).page(params[:page])
   end
 
   def update

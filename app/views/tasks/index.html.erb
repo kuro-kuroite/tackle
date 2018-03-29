@@ -5,5 +5,7 @@
       <%= render task, task: task, comment: task.comments.last %>
     <% end %>
     <%= render 'form', task: @task %>
+
+    <%= paginate @tasks %>
   </div>
 </div>

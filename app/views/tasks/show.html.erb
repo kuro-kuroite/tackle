@@ -5,5 +5,7 @@
 
     <%= render @comments %>
     <%= render 'comments/form', task: @task, comment: @comment %>
+
+    <%= paginate @comments %>
   </div>
 </div>
