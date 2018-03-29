@@ -8,8 +8,10 @@
     - redirect_to :index ?
 
 - TODO
-  - comments#edit の実装
+  - ~comments#edit の実装
     - task#show の中でformに変わるようにしたい
+      - Ajaxの知識が必要らしい
+    - shallow path の罠にハマった
   - ~レイアウトの実装
   - ~バリデーションの実装
   - ソートの実装

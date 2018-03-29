@@ -1,5 +1,5 @@
 class CommentsController < ApplicationController
-  before_action :set_comment, only: [:update, :destroy] # TODO: edit, show はいらないのか
+  before_action :set_comment, only: [:edit, :update, :destroy] # TODO: show はいらないのか
 
   def create
     @comment = Comment.new(comment_params)
@@ -20,6 +20,10 @@ class CommentsController < ApplicationController
   end
 
   # TODO: edit の実装
+  def edit
+    @comments = Comment.where(task_id: params[:id])
+    @task = @comment.task
+  end
 
   def update
     @comment.update(comment_params) # FIXME: :task_id の反映ができないのでは？
