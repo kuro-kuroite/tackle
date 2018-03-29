@@ -28,6 +28,7 @@
   - ~tasks#indexに最新のコメントのみを注釈で入れる
   - ~edit destroyのボタンをBootstrap
   - datetimeをlocalの時間に対応できるように
+    - 保存はutcとして、使用する時にjstで使えるようにすると良い可能性が...
   - ~datetimeのデザインをよくする
   - Tackle iconを作る
   - ~date picker
