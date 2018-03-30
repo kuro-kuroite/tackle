@@ -18,6 +18,14 @@
 // Custom bootstrap variables must be set or imported *before* bootstrap.
 @import "bootstrap";
 
+// html {
+//   font-size: 62.5%;
+// }
+//
+// body{
+//   font-size: 0.16em; // chromeでの崩れを防ぐため
+// }
+
 * {
   border: 1px solid black;
 }
