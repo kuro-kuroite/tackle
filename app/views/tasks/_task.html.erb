@@ -12,10 +12,17 @@
       <li class="list-inline-item"><i class="fa fa-clock-o" aria-hidden="true"></i><%= task.deadline.strftime("%H:%M:%S") %></li>
       <!-- <li class="list-inline-item"><i class="fa fa-location-arrow" aria-hidden="true"></i> Cafe</li> -->
     </ul>
-    <% remaining_time = task.deadline - Time.now %>
-    <p class="bilbo-font">
-      <%= distance_of_time_in_words(remaining_time) %>
-    </p>
+    <div class="bilbo-font">
+      <span id="remainingDays-<%= task.id %>"></span> days <span id="remainingTime-<%= task.id %>"></span> <%# FIXME: days と day を動的に変更できるようにする  %>
+    </div>
+
+    <%# HACK: task.scss に移植 %>
+    <style>
+      #remainingDays-<%= task.id %>, #remainingTime-<%= task.id %> {
+        font-size: 4.5rem;
+      }
+    </style>
+
     <% if defined? comment %>
       <% unless comment.nil?  %>
         <p>
