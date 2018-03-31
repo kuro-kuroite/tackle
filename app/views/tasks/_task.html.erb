@@ -1,15 +1,15 @@
 <div class="row row-striped my-5">
   <div class="col-3 col-sm-2">
     <h1 class="display-4 mx-auto text-right">
-      <span class="badge badge-secondary mw-100 text-center"><%= task.deadline.day %></span>
+      <span class="badge badge-secondary mw-100 text-center"><%= task.deadline.in_time_zone('Tokyo').day %></span>
     </h1>
-    <h2 class="text-right"><%= task.deadline.strftime("%b.") %></h2>
+    <h2 class="text-right"><%= task.deadline.in_time_zone('Tokyo').strftime("%b.") %></h2>
   </div>
   <div class="col-9 col-sm-8">
     <h3 class="text-uppercase"><strong><%= link_to task.name, task, class: "text-info" %></strong></h3>
     <ul class="list-inline">
-      <li class="list-inline-item"><i class="fa fa-calendar-o" aria-hidden="true"></i><%= task.deadline.strftime("%m/%d(#{%w(日 月 火 水 木 金 土)[task.deadline.wday]})") %></li>
-      <li class="list-inline-item"><i class="fa fa-clock-o" aria-hidden="true"></i><%= task.deadline.strftime("%H:%M:%S") %></li>
+      <li class="list-inline-item"><i class="fa fa-calendar-o" aria-hidden="true"></i><%= task.deadline.in_time_zone('Tokyo').strftime("%m/%d(#{%w(日 月 火 水 木 金 土)[task.deadline.in_time_zone('Tokyo').wday]})") %></li>
+      <li class="list-inline-item"><i class="fa fa-clock-o" aria-hidden="true"></i><%= task.deadline.in_time_zone('Tokyo').strftime("%H:%M:%S") %></li>
       <% remaining_time = task.deadline.in_time_zone('Tokyo') - Time.zone.now %>
       <li class="list-inline-item">
         <%= distance_of_time_in_words(remaining_time) %>
