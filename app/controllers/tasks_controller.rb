@@ -20,7 +20,7 @@ class TasksController < ApplicationController
   end
 
   def index
-    @tasks = Task.order(deadline: :asc).page(params[:page]).per(1)
+    @tasks = Task.order(deadline: :asc).page(params[:page]).per(10)
     @task = Task.new
   end
 
