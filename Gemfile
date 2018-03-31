@@ -10,6 +10,8 @@ gem 'flatpickr'
 
 gem 'kaminari'
 
+gem 'faker'
+
 # Use Bootstrap
 gem 'bootstrap', '~> 4.0.0'
 gem 'jquery-rails'
