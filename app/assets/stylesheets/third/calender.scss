@@ -1,11 +1,13 @@
 .row-striped:nth-of-type(odd){
   background-color: #efefef;
   border-left: 4px #000000 solid;
+  margin: 0 0.5rem 0 1rem;
 }
 
 .row-striped:nth-of-type(even){
-  background-color: #ffffff;
-  border-left: 4px #efefef solid;
+  background-color: #aaaaaa;
+  border-left: 4px #000000 solid;
+  margin: 0 0.5rem 0 1rem;
 }
 
 .row-striped {
