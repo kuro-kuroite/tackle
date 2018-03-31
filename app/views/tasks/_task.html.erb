@@ -27,6 +27,72 @@
       }
     </style>
 
+    <%# HACK: task.js.coffee に移植 %>
+    <%= javascript_tag do %>
+      window.task = <%= raw task.to_json %>;
+    <% end %>
+    <script>
+      console.log(task)
+      console.log(task.deadline)
+      // FIXME: targetをUTCで取得したい
+      var target<%= task.id %> = new Date(task.deadline);
+      var target<%= task.id %>_local = new Date(task.deadline);
+      console.log(target<%= task.id %>.getTimezoneOffset());
+      console.log(target<%= task.id %>.getHours());
+      console.log(target<%= task.id %>.getMinutes());
+      console.log(target<%= task.id %>.getSeconds());
+
+      function getResult<%= task.id %>() {
+        // var now<%= task.id %> = Date.UTC();
+        var now<%= task.id %>_local = new Date();
+
+        // FIXME: 内部計算はUTCのままにしたい
+        //   target<%= task.id %> - now<%= task.id %>
+        var diff = (target<%= task.id %>_local - now<%= task.id %>_local) / 1000;
+
+
+        // 時刻情報を取得
+        if(diff < 0) {
+          var d = 0;
+          var h = 0;
+          var m = 0;
+          var s = 0;
+        }
+        else {
+          var d = Math.floor(diff / 60 / 60 / 24);
+          diff = diff - 60 * 60 * 24 * d;
+
+          var h = Math.floor(diff / 60 / 60);
+          diff = diff - 60 * 60 * h;
+
+          var m = Math.floor(diff / 60);
+          diff = diff - 60 * m;
+
+          var s = Math.floor(diff);
+        }
+
+        if(d <= 1) {
+          document.getElementById('remainingDays-<%= task.id %>').style.color = "red";
+          document.getElementById('remainingTime-<%= task.id %>').style.color = "red";
+        }
+
+        document.getElementById('remainingDays-<%= task.id %>').innerHTML = d;
+        document.getElementById('remainingTime-<%= task.id %>').innerHTML = `${padZero(h)}:${padZero(m)}:${padZero(s)}`;
+
+        // リロードなしに時刻をカウントダウン
+        setTimeout(function() {
+          getResult<%= task.id %>();
+        }, 200);
+      };
+
+      getResult<%= task.id %>();
+
+      function padZero(n) {
+        return (n < 10) ? `0${n}` : n
+      }
+
+    </script>
+
     <% if defined? comment %>
       <% unless comment.nil?  %>
         <p>
