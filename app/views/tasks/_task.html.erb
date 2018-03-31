@@ -10,6 +10,10 @@
     <ul class="list-inline">
       <li class="list-inline-item"><i class="fa fa-calendar-o" aria-hidden="true"></i><%= task.deadline.strftime("%m/%d(#{%w(日 月 火 水 木 金 土)[task.deadline.wday]})") %></li>
       <li class="list-inline-item"><i class="fa fa-clock-o" aria-hidden="true"></i><%= task.deadline.strftime("%H:%M:%S") %></li>
+      <% remaining_time = task.deadline.in_time_zone('Tokyo') - Time.zone.now %>
+      <li class="list-inline-item">
+        <%= distance_of_time_in_words(remaining_time) %>
+      </li>
       <!-- <li class="list-inline-item"><i class="fa fa-location-arrow" aria-hidden="true"></i> Cafe</li> -->
     </ul>
     <div class="bilbo-font">
